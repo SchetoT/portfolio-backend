@@ -9,7 +9,7 @@ connectToDB();
 
 app.use(express.json());
 
-const allowedOrigins = ['https://portfolio-frontend-3sknlz8jx-tomas-projects-e5b3bb3f.vercel.app', 'https://portfolio-frontend-nine-alpha.vercel.app']; // Asegúrate de incluir tu URL de frontend en Vercel
+const allowedOrigins = ['https://portfolio-frontend-3sknlz8jx-tomas-projects-e5b3bb3f.vercel.app', 'https://portfolio-frontend-nine-alpha.vercel.app']; 
 app.use(cors({
 origin: allowedOrigins,
 methods: ['GET', 'POST', 'PUT', 'DELETE'],
@@ -23,5 +23,10 @@ res.send('Servidor funcionando correctamente');
 
 
 app.use("/api/projects", projectRoutes);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
 
 export default app;
