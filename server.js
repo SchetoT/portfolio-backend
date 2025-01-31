@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';  
-import connectToDB from './connect.js';
+import connectToDB from './src/utils/connect.js';
 import projectRoutes from '../routes/projectsRoutes.js';
 
 const app = express();
